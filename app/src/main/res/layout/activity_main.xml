@@ -10,15 +10,16 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
         <ImageView
             android:id="@+id/logoApp"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginStart="72dp"
+            android:layout_marginStart="50dp"
+            android:contentDescription="no"
             android:src="@drawable/ic_logo_app"
-            app:layout_constraintEnd_toEndOf=""
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,33 +27,36 @@
             android:id="@+id/titleApp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="18dp"
             android:text="TRUCO UTFPR"
             android:textColor="#745B00"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/logoApp"
-            app:layout_constraintStart_toEndOf="@+id/logoApp"
-            app:layout_constraintTop_toTopOf="@+id/logoApp" />
+            app:layout_constraintBottom_toBottomOf="@id/logoApp"
+            app:layout_constraintStart_toEndOf="@id/logoApp"
+            app:layout_constraintTop_toTopOf="@id/logoApp" />
 
         <TextView
             android:id="@+id/statusGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Partida em andamento"
+            android:layout_marginTop="36dp"
+            android:text="Game in Progress"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleApp" />
+            app:layout_constraintTop_toBottomOf="@id/titleApp" />
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cvPlayerOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#F2F0F0"
             app:cardCornerRadius="15dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/statusGame">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -67,27 +71,29 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="Player 1"
+                    android:textColor="#745B00"
+                    android:textSize="18dp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageEdit"
+                    app:layout_constraintBottom_toBottomOf="@id/ivEdit_1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/imageEdit"
+                    app:layout_constraintTop_toTopOf="@id/ivEdit_1"
                     app:layout_constraintVertical_bias="0.439" />
 
                 <ImageView
-                    android:id="@+id/imageEdit"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
+                    android:id="@+id/ivEdit_1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:layout_marginStart="14dp"
                     android:src="@drawable/ic_edit"
-                    app:layout_constraintStart_toEndOf="@+id/tvPlayerOne"
+                    app:layout_constraintStart_toEndOf="@id/tvPlayerOne"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tvPoint"
+                    android:id="@+id/tvPointOne"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="PONTOS"
-                    android:textStyle="bold"
+                    android:text="POINTS"
+                    android:textSize="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvPlayerOne" />
 
@@ -95,28 +101,240 @@
                     android:id="@+id/tvPoints"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="18dp"
                     android:text="00"
-                    android:textSize="56dp"
+                    android:textSize="64dp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvPlayerOne" />
 
-                <Button
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:backgroundTint="#FFCC00"
-                    android:text="+1"
-                    android:textColor="#745B00"
-                    app:cornerRadius="0dp"
-                    app:layout_constraintTop_toBottomOf="@id/tvPoints"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPoints">
 
+                    <Button
+                        android:id="@+id/btAddOne_1"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:backgroundTint="#FFCC00"
+                        android:padding="0dp"
+                        android:text="+1"
+                        android:textColor="#745B00"
+                        app:cornerRadius="0dp" />
 
+                    <Button
+                        android:id="@+id/btAddThree_1"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="4dp"
+                        android:backgroundTint="#FFCC00"
+                        android:padding="0dp"
+                        android:text="+3"
+                        android:textColor="#745B00"
+                        app:cornerRadius="0dp" />
+
+                    <Button
+                        android:id="@+id/btAddSix_1"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="4dp"
+                        android:backgroundTint="#FFCC00"
+                        android:padding="0dp"
+                        android:text="+6"
+                        android:textColor="#745B00"
+                        app:cornerRadius="0dp" />
+
+                    <Button
+                        android:id="@+id/btAddNine_1"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="4dp"
+                        android:backgroundTint="#FFCC00"
+                        android:padding="0dp"
+                        android:text="+9"
+                        android:textColor="#745B00"
+                        app:cornerRadius="0dp" />
+
+                    <Button
+                        android:id="@+id/btAddTwelve_1"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="4dp"
+                        android:backgroundTint="#FFCC00"
+                        android:padding="0dp"
+                        android:text="+12"
+                        android:textColor="#745B00"
+                        app:cornerRadius="0dp" />
+
+                </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvPlayerTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#F2F0F0"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvPlayerOne">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constrainLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvPlayerTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Player 1"
+                    android:textColor="#745B00"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/ivEdit_2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivEdit_2"
+                    app:layout_constraintVertical_bias="0.439" />
+
+                <ImageView
+                    android:id="@+id/ivEdit_2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="14dp"
+                    android:src="@drawable/ic_edit"
+                    app:layout_constraintStart_toEndOf="@id/tvPlayerTwo"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="POINTS"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvPlayerTwo" />
+
+                <TextView
+                    android:id="@+id/tvPointsTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="00"
+                    android:textSize="64dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPlayerTwo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPointsTwo">
+
+                    <Button
+                        android:id="@+id/btAddOne_2"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:backgroundTint="#FFCC00"
+                        android:padding="0dp"
+                        android:text="+1"
+                        android:textColor="#745B00"
+                        app:cornerRadius="0dp" />
+
+                    <Button
+                        android:id="@+id/btAddThree_2"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="4dp"
+                        android:backgroundTint="#FFCC00"
+                        android:padding="0dp"
+                        android:text="+3"
+                        android:textColor="#745B00"
+                        app:cornerRadius="0dp" />
+
+                    <Button
+                        android:id="@+id/btAddSix_2"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="4dp"
+                        android:backgroundTint="#FFCC00"
+                        android:padding="0dp"
+                        android:text="+6"
+                        android:textColor="#745B00"
+                        app:cornerRadius="0dp" />
+
+                    <Button
+                        android:id="@+id/btAddNine_2"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="4dp"
+                        android:backgroundTint="#FFCC00"
+                        android:padding="0dp"
+                        android:text="+9"
+                        android:textColor="#745B00"
+                        app:cornerRadius="0dp" />
+
+                    <Button
+                        android:id="@+id/btAddTwelve_2"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="4dp"
+                        android:backgroundTint="#FFCC00"
+                        android:padding="0dp"
+                        android:text="+12"
+                        android:textColor="#745B00"
+                        app:cornerRadius="0dp" />
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="Scoring History"
+            android:textColor="#939095"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvPlayerTwo"
+            app:strokeColor="#939095"
+            app:strokeWidth="1dp" />
+
+        <Button
+            android:id="@+id/btClear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFFFF"
+            android:text="Clear Score History"
+            android:textColor="#939095"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btHistory"
+            app:strokeColor="#939095"
+            app:strokeWidth="1dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
