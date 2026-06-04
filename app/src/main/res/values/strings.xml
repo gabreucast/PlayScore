@@ -1,3 +1,23 @@
 <resources>
+    <!--activity_main-->
     <string name="app_name">PlayScore</string>
+    <string name="name_app">TRUCO UTFPR</string>
+    <string name="game_in_progress">Game in Progress</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="edit_name">Edit name</string>
+    <string name="points">POINTS</string>
+    <string name="_1">+1</string>
+    <string name="_3">+3</string>
+    <string name="_6">+6</string>
+    <string name="_9">+9</string>
+    <string name="_12">+12</string>
+    <string name="scoring_history">Scoring History</string>
+    <string name="clear_score_history">Clear Score History</string>
+
+    <!--MainActivity-->
+    <string name="game_over">Game Over</string>
+    <string name="winner_message">Player: %1$s wins!</string>
+    <string name="restart">Restart</string>
+
 </resources>
