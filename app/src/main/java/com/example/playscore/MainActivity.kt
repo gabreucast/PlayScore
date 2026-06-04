@@ -28,15 +28,22 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        if (savedInstanceState != null) {
+            playerOne = savedInstanceState.getInt("playerOne")
+            playerTwo = savedInstanceState.getInt("playerTwo")
+        }
+
         setupClickListeners()
         updateScreen()
 
     } //onCreate
 
-    private fun checkWinner(){
+    private fun checkWinner() {
         if (playerOne >= 12) showWinner(getString(R.string.player_1))
         else if (playerTwo >= 12) showWinner(getString(R.string.player_2))
     }
+
     private fun showWinner(winner: String) {
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.game_over))
@@ -111,6 +118,11 @@ class MainActivity : AppCompatActivity() {
         }
     } // setupClickListeners()
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("playerOne", playerOne)
+        outState.putInt("playerTwo", playerTwo)
+    }
 
 
 } // MainActivity : AppCompatActivity()
