@@ -1,5 +1,6 @@
 package com.example.playscore
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -65,6 +66,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupClickListeners() {
 
+        // EditPlayer2
+        binding.ivEdit2.setOnClickListener {
+            val intent = Intent(this, EditName::class.java)
+            startActivity(intent)
+        }
+
+        // EditPlayer1
+        binding.ivEdit1.setOnClickListener {
+            intent = Intent(this, EditName::class.java)
+            startActivity(intent)
+        }
+
         // Player 1
         binding.btAddOne1.setOnClickListener {
             playerOne += 1
@@ -127,4 +140,3 @@ class MainActivity : AppCompatActivity() {
 
 } // MainActivity : AppCompatActivity()
 
-//https://drive.google.com/file/d/1IIUbG7GQOrjMY8Ml83UyKp98QqttvNib/view?pli=1
