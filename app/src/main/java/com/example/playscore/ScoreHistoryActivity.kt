@@ -6,15 +6,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.playscore.databinding.ActivityEditNameBinding
+import com.example.playscore.databinding.ActivityScoreHistoryBinding
 
 class ScoreHistoryActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityEditNameBinding
+    lateinit var binding: ActivityScoreHistoryBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityEditNameBinding.inflate(layoutInflater)
+        binding = ActivityScoreHistoryBinding.inflate(layoutInflater)
 
 
         enableEdgeToEdge()
@@ -23,6 +24,11 @@ class ScoreHistoryActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        } // ViewCompat
+
+        binding.ivBack.setOnClickListener {
+            finish()
         }
-    }
-}
+
+    } // onCreate
+} // ScoreHistoryActivity : AppCompatActivity()

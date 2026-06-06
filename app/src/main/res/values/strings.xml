@@ -12,7 +12,7 @@
     <string name="_6">+6</string>
     <string name="_9">+9</string>
     <string name="_12">+12</string>
-    <string name="points_clear">Clear Points</string>
+    <string name="points_clear">Reset Scores</string>
     <string name="score_history">Score History</string>
 
     <!--MainActivity-->
@@ -21,8 +21,8 @@
     <string name="restart">Restart</string>
 
     <!--activity_edit_name-->
-    <string name="confirm">Confirm</string>
-    <string name="configure_game">Configure Game</string>
+    <string name="confirm">Start Game</string>
+    <string name="configure_game">Game Setup</string>
     <string name="enter_names">Enter the names of the players or teams to start keeping score.</string>
     <string name="player_1_configure">Player 1</string>
     <string name="player_2_configure">Player 2</string>
@@ -31,6 +31,7 @@
 
     <!--activity_score_history-->
     <string name="clear_scoring_history">Clear Scoring History</string>
+    <string name="wins">00 Wins</string>
 
 
 </resources>

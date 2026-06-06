@@ -66,6 +66,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupClickListeners() {
 
+        // Score History Button
+        binding.btHistory.setOnClickListener {
+            val intent = Intent(this, ScoreHistoryActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Clean Points Button
+        binding.btClear.setOnClickListener {
+            playerOne = 0
+            playerTwo = 0
+            updateScreen()
+        }
+
         // EditPlayer2
         binding.ivEdit2.setOnClickListener {
             val intent = Intent(this, EditName::class.java)
