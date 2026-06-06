@@ -32,5 +32,6 @@
     <!--activity_score_history-->
     <string name="clear_scoring_history">Limpar Histórico de Pontuação</string>
     <string name="wins">00 Vitórias</string>
+    <string name="total_wins">Vitórias Totais</string>
 
 </resources>

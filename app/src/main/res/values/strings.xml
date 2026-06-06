@@ -32,6 +32,6 @@
     <!--activity_score_history-->
     <string name="clear_scoring_history">Clear Scoring History</string>
     <string name="wins">00 Wins</string>
-
+    <string name="total_wins">Total Wins</string>
 
 </resources>
