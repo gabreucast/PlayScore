@@ -43,8 +43,8 @@
             android:layout_marginTop="36dp"
             android:text="@string/game_in_progress"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/titleApp"
+            app:layout_constraintStart_toStartOf="@+id/logoApp"
             app:layout_constraintTop_toBottomOf="@id/titleApp" />
 
 
@@ -55,8 +55,8 @@
             android:layout_marginTop="16dp"
             android:backgroundTint="#F2F0F0"
             app:cardCornerRadius="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/statusGame"
+            app:layout_constraintStart_toStartOf="@+id/statusGame"
             app:layout_constraintTop_toBottomOf="@id/statusGame">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -192,8 +192,8 @@
             android:layout_marginTop="16dp"
             android:backgroundTint="#F2F0F0"
             app:cardCornerRadius="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cvPlayerOne"
+            app:layout_constraintStart_toStartOf="@+id/cvPlayerOne"
             app:layout_constraintTop_toBottomOf="@id/cvPlayerOne">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -327,10 +327,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="#FFCC00"
-            android:text="@string/scoring_history"
+            android:text="@string/score_history"
             android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cvPlayerTwo"
+            app:layout_constraintStart_toStartOf="@+id/cvPlayerTwo"
             app:layout_constraintTop_toBottomOf="@+id/cvPlayerTwo"
             app:strokeColor="#939095"
             app:strokeWidth="1dp" />
@@ -340,10 +340,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#FFCC00"
-            android:text="@string/clear_score_history"
+            android:text="@string/points_clear"
             android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btHistory"
+            app:layout_constraintStart_toStartOf="@+id/btHistory"
             app:layout_constraintTop_toBottomOf="@+id/btHistory"
             app:strokeColor="#939095"
             app:strokeWidth="1dp" />

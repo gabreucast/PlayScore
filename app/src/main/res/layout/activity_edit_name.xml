@@ -12,25 +12,34 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:contentDescription="@string/back"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/titleApp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
+            android:layout_marginStart="24dp"
             android:text="@string/name_app"
             android:textColor="#745B00"
             android:textSize="28sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+            app:layout_constraintStart_toEndOf="@+id/ivBack"
+            app:layout_constraintTop_toTopOf="@+id/ivBack" />
 
         <TextView
             android:id="@+id/tvConfig"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="58dp"
-            android:text="Configure Game"
+            android:text="@string/configure_game"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,14 +50,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Enter the names of the players or teams to start keeping score."
+            android:text="@string/enter_names"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvConfig" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvPlayerOne"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:backgroundTint="#F2F0F0"
@@ -67,7 +76,7 @@
                     android:id="@+id/tilPlayerOne"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Player 1"
+                    android:hint="@string/player_1_configure"
                     app:endIconDrawable="@drawable/ic_person"
                     app:endIconMode="custom"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -77,7 +86,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Player 1" />
+                        android:hint="@string/player_1_configure" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -85,7 +94,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:hint="Player 2"
+                    android:hint="@string/player_2_configure"
                     app:endIconDrawable="@drawable/ic_person"
                     app:endIconMode="custom"
                     app:layout_constraintEnd_toEndOf="@id/tilPlayerOne"
@@ -95,7 +104,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Player 2" />
+                        android:hint="@string/player_2_configure" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
@@ -103,10 +112,13 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="16dp"
                     android:backgroundTint="#FFCC00"
-                    android:text="Confirm"
+                    android:text="@string/confirm"
+                    android:textColor="#000000"
                     app:layout_constraintEnd_toEndOf="@id/tilPlayerTwo"
                     app:layout_constraintStart_toStartOf="@id/tilPlayerTwo"
-                    app:layout_constraintTop_toBottomOf="@id/tilPlayerTwo" />
+                    app:layout_constraintTop_toBottomOf="@id/tilPlayerTwo"
+                    app:strokeColor="#939095"
+                    app:strokeWidth="1dp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
