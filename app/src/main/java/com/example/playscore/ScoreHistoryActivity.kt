@@ -2,6 +2,7 @@ package com.example.playscore
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +15,8 @@ class ScoreHistoryActivity : AppCompatActivity() {
     lateinit var binding: ActivityScoreHistoryBinding
     private var winsPlayerOne = 0
     private var winsPlayerTwo = 0
+    private var playerOneName = ""
+    private var playerTwoName = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,11 +40,17 @@ class ScoreHistoryActivity : AppCompatActivity() {
         if (savedInstanceState != null) {
             winsPlayerOne = savedInstanceState.getInt("winsPlayerOne")
             winsPlayerTwo = savedInstanceState.getInt("winsPlayerTwo")
+            playerOneName = savedInstanceState.getString("playerOneName", "")
+            playerTwoName = savedInstanceState.getString("playerTwoName", "")
         } else {
             winsPlayerOne = intent.getIntExtra("winsPlayerOne", 0)
             winsPlayerTwo = intent.getIntExtra("winsPlayerTwo", 0)
+            playerOneName = intent.getStringExtra("playerOneName") ?: ""
+            playerTwoName = intent.getStringExtra("playerTwoName") ?: ""
         }
         showWins()
+
+
 
         binding.ivBack.setOnClickListener {
             saveAndExit()
@@ -53,6 +62,15 @@ class ScoreHistoryActivity : AppCompatActivity() {
 
             showWins()
         } // btClearHistory Listener
+
+        binding.btClearHistory.setOnLongClickListener {
+            Toast.makeText(
+                this,
+                getString(R.string.clear_scoring_history),
+                Toast.LENGTH_SHORT
+            ).show()
+            true
+        }
     } // onCreate
 
     private fun saveAndExit() {
@@ -68,11 +86,15 @@ class ScoreHistoryActivity : AppCompatActivity() {
     private fun showWins() {
         binding.etVictoriesOne.text = winsPlayerOne.toString()
         binding.etVictoriesTwo.text = winsPlayerTwo.toString()
+        binding.etPlayerOne.text = playerOneName
+        binding.etPlayerTwo.text = playerTwoName
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt("winsPlayerOne", winsPlayerOne)
         outState.putInt("winsPlayerTwo", winsPlayerTwo)
+        outState.putString("playerOneName", playerOneName)
+        outState.putString("playerTwoName", playerTwoName)
     }
 } // ScoreHistoryActivity : AppCompatActivity()

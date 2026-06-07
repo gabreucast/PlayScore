@@ -42,18 +42,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:text="@string/game_in_progress"
-            android:textStyle="bold"
             android:textColor="@color/black_text"
+            android:textSize="22sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/titleApp"
             app:layout_constraintStart_toStartOf="@+id/logoApp"
             app:layout_constraintTop_toBottomOf="@id/titleApp" />
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvPlayerOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:backgroundTint="@color/card_tint"
             app:cardCornerRadius="15dp"
             app:layout_constraintEnd_toEndOf="@+id/statusGame"
@@ -85,17 +85,27 @@
                     android:layout_marginStart="14dp"
                     android:contentDescription="@string/edit_name"
                     android:src="@drawable/ic_edit"
+                    app:layout_constraintBottom_toBottomOf="@id/tvPlayerOne"
                     app:layout_constraintStart_toEndOf="@id/tvPlayerOne"
-                    app:layout_constraintTop_toTopOf="@id/tvPlayerOne"
-                    app:layout_constraintBottom_toBottomOf="@id/tvPlayerOne"/>
+                    app:layout_constraintTop_toTopOf="@id/tvPlayerOne" />
+
+                <ImageView
+                    android:id="@+id/ivNumberBeforeOne"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:contentDescription="@string/edit_name"
+                    android:src="@drawable/ic_history"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvPlayerOne"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvPlayerOne" />
 
                 <TextView
                     android:id="@+id/tvPointOne"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/points_text"
-                    android:textSize="18sp"
                     android:textColor="@color/black_text"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="@+id/tvPointsOne"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/tvPointsOne"
@@ -229,13 +239,24 @@
                     app:layout_constraintStart_toEndOf="@id/tvPlayerTwo"
                     app:layout_constraintTop_toTopOf="@id/tvPlayerTwo" />
 
+                <ImageView
+                    android:id="@+id/ivNumberBeforeTwo"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:contentDescription="@string/edit_name"
+                    android:src="@drawable/ic_history"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvPlayerTwo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvPlayerTwo" />
+
+
                 <TextView
                     android:id="@+id/tvPoint"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/points_text"
-                    android:textSize="18sp"
                     android:textColor="@color/black_text"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="@+id/tvPointsTwo"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/tvPointsTwo"

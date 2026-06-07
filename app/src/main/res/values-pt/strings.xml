@@ -12,25 +12,31 @@
     <string name="_6">+6</string>
     <string name="_9">+9</string>
     <string name="_12">+12</string>
-    <string name="points_clear">Zerar Pontos</string>
-    <string name="scoring_history">Histórico de Pontuação</string>
-    <string name="clear_score_history">Limpar Histórico de Pontuação</string>
+    <string name="points_clear">Reiniciar pontuações</string>
+    <string name="scoring_history">Histórico de pontuação</string>
+    <string name="clear_score_history">Limpar histórico de pontuação</string>
 
     <!--MainActivity-->
-    <string name="game_over">Fim de Jogo</string>
+    <string name="game_over">Fim da partida</string>
     <string name="winner_message">Jogador: %1$s venceu!</string>
     <string name="restart">Reiniciar</string>
 
     <!--activity_edit_name-->
-    <string name="confirm">Iniciar Partida</string>
-    <string name="configure_game">Configurar Partida</string>
-    <string name="enter_names">Insira os nomes dos jogadores ou das duplas para iniciar o controle de pontos.</string>
+    <string name="confirm">Iniciar partida</string>
+    <string name="configure_game">Configuração da partida</string>
+    <string name="enter_names">Digite os nomes dos jogadores ou equipes para começar a marcar os pontos.</string>
     <string name="player_1_configure">Jogador 1</string>
     <string name="player_2_configure">Jogador 2</string>
     <string name="back">Voltar</string>
 
     <!--activity_score_history-->
-    <string name="total_wins">Vitórias Totais</string>
-    <string name="clear_scoring_history">Limpar Histórico de Pontuação</string>
-    <string name="history_wins">%1$d Vitórias</string>
+    <string name="total_wins">Total de vitórias</string>
+    <string name="clear_scoring_history">Limpar histórico de pontuação</string>
+    <string name="history_wins">%1$d vitórias</string>
+
+    <!--Toasts-->
+    <string name="clear_points">Limpar pontos</string>
+    <string name="show_score_history">Mostrar histórico de pontuação</string>
+    <string name="edit_player_name">Editar nome do jogador</string>
+    <string name="undo">Desfazer</string>
 </resources>

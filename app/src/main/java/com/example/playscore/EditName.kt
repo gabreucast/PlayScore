@@ -2,6 +2,7 @@ package com.example.playscore
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -60,6 +61,15 @@ class EditName : AppCompatActivity() {
 
         binding.ivBack.setOnClickListener {
             finish()
+        }
+
+        binding.btStartGame.setOnLongClickListener {
+            Toast.makeText(
+                this,
+                getString(R.string.confirm),
+                Toast.LENGTH_SHORT
+            ).show()
+            true
         }
 
     } // onCreate()

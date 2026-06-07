@@ -33,4 +33,10 @@
     <string name="total_wins">Total Wins</string>
     <string name="clear_scoring_history">Clear Scoring History</string>
     <string name="history_wins">%1$d Wins</string>
+
+    <!--Toasts-->
+    <string name="clear_points">Clear Points</string>
+    <string name="show_score_history">Show Score History</string>
+    <string name="edit_player_name">Edit player name</string>
+    <string name="undo">Undo</string>
 </resources>

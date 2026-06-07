@@ -12,25 +12,31 @@
     <string name="_6">+6</string>
     <string name="_9">+9</string>
     <string name="_12">+12</string>
-    <string name="points_clear">Reiniciar Puntos</string>
-    <string name="scoring_history">Historial de Puntuación</string>
-    <string name="clear_score_history">Borrar Historial de Puntuación</string>
+    <string name="points_clear">Reiniciar puntuaciones</string>
+    <string name="scoring_history">Historial de puntuaciones</string>
+    <string name="clear_score_history">Borrar historial de puntuaciones</string>
 
     <!--MainActivity-->
-    <string name="game_over">Fin del Juego</string>
-    <string name="winner_message">¡Jugador: %1$s ha ganado!</string>
+    <string name="game_over">Fin de la partida</string>
+    <string name="winner_message">¡Jugador: %1$s gana!</string>
     <string name="restart">Reiniciar</string>
 
     <!--activity_edit_name-->
-    <string name="confirm">Iniciar Partida</string>
-    <string name="configure_game">Configurar Partida</string>
-    <string name="enter_names">Ingresa los nombres de los jugadores o equipos para comenzar a llevar la puntuación.</string>
+    <string name="confirm">Iniciar partida</string>
+    <string name="configure_game">Configuración de la partida</string>
+    <string name="enter_names">Introduce los nombres de los jugadores o equipos para comenzar a llevar la puntuación.</string>
     <string name="player_1_configure">Jugador 1</string>
     <string name="player_2_configure">Jugador 2</string>
     <string name="back">Volver</string>
 
     <!--activity_score_history-->
-    <string name="total_wins">Victorias Totales</string>
-    <string name="clear_scoring_history">Borrar Historial de Puntuación</string>
-    <string name="history_wins">%1$d Victorias</string>
+    <string name="total_wins">Victorias totales</string>
+    <string name="clear_scoring_history">Borrar historial de puntuaciones</string>
+    <string name="history_wins">%1$d victorias</string>
+
+    <!--Toasts-->
+    <string name="clear_points">Borrar puntos</string>
+    <string name="show_score_history">Mostrar historial de puntuaciones</string>
+    <string name="edit_player_name">Editar nombre del jugador</string>
+    <string name="undo">Deshacer</string>
 </resources>
