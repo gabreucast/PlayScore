@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--activity_main-->
     <string name="app_name">PlayScore</string>
@@ -7,14 +6,15 @@
     <string name="player_1">Jogador 1</string>
     <string name="player_2">Jogador 2</string>
     <string name="edit_name">Editar nome</string>
-    <string name="points">PONTOS</string>
+    <string name="points_text">PONTOS</string>
     <string name="_1">+1</string>
     <string name="_3">+3</string>
     <string name="_6">+6</string>
     <string name="_9">+9</string>
     <string name="_12">+12</string>
     <string name="points_clear">Zerar Pontos</string>
-    <string name="score_history">Histórico de Pontuação</string>
+    <string name="scoring_history">Histórico de Pontuação</string>
+    <string name="clear_score_history">Limpar Histórico de Pontuação</string>
 
     <!--MainActivity-->
     <string name="game_over">Fim de Jogo</string>
@@ -30,8 +30,7 @@
     <string name="back">Voltar</string>
 
     <!--activity_score_history-->
-    <string name="clear_scoring_history">Limpar Histórico de Pontuação</string>
-    <string name="wins">00 Vitórias</string>
     <string name="total_wins">Vitórias Totais</string>
-
+    <string name="clear_scoring_history">Limpar Histórico de Pontuação</string>
+    <string name="history_wins">%1$d Vitórias</string>
 </resources>

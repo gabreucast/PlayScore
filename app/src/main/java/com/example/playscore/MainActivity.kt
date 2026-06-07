@@ -3,6 +3,7 @@ package com.example.playscore
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,7 +16,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var playerOne = 0
     private var playerTwo = 0
+    private var winsPlayerOne = 0
+    private var winsPlayerTwo = 0
 
+    private var playerOneName = ""
+    private var playerTwoName = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +38,13 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState != null) {
             playerOne = savedInstanceState.getInt("playerOne")
             playerTwo = savedInstanceState.getInt("playerTwo")
+            winsPlayerOne = savedInstanceState.getInt("winsPlayerOne")
+            winsPlayerTwo = savedInstanceState.getInt("winsPlayerTwo")
+            playerOneName = savedInstanceState.getString("playerOneName", "")
+            playerTwoName = savedInstanceState.getString("playerTwoName", "")
+        } else {
+            winsPlayerOne = intent.getIntExtra("winsPlayerOne", 0)
+            winsPlayerTwo = intent.getIntExtra("winsPlayerTwo", 0)
         }
 
         setupClickListeners()
@@ -40,9 +52,35 @@ class MainActivity : AppCompatActivity() {
 
     } //onCreate
 
+    private val getResults = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { retorno ->
+
+        if (retorno.resultCode == RESULT_OK) {
+
+            winsPlayerOne =
+                retorno.data?.getIntExtra("winsPlayerOne", winsPlayerOne) ?: winsPlayerOne
+
+            winsPlayerTwo =
+                retorno.data?.getIntExtra("winsPlayerTwo", winsPlayerTwo) ?: winsPlayerTwo
+
+            playerOneName =
+                retorno.data?.getStringExtra("playerOneName") ?: playerOneName
+
+            playerTwoName =
+                retorno.data?.getStringExtra("playerTwoName") ?: playerTwoName
+        }
+        updateScreen()
+    }
+
     private fun checkWinner() {
-        if (playerOne >= 12) showWinner(getString(R.string.player_1))
-        else if (playerTwo >= 12) showWinner(getString(R.string.player_2))
+        if (playerOne >= 12) {
+            showWinner(getString(R.string.player_1))
+            winsPlayerOne++
+        } else if (playerTwo >= 12) {
+            showWinner(getString(R.string.player_2))
+            winsPlayerTwo++
+        }
     }
 
     private fun showWinner(winner: String) {
@@ -61,15 +99,26 @@ class MainActivity : AppCompatActivity() {
     fun updateScreen() {
         binding.tvPointsOne.text = String.format("%02d", playerOne)
         binding.tvPointsTwo.text = String.format("%02d", playerTwo)
+
+        binding.tvPlayerOne.text =
+            if (playerOneName.isBlank()) getString(R.string.player_1)
+            else playerOneName
+
+        binding.tvPlayerTwo.text =
+            if (playerTwoName.isBlank()) getString(R.string.player_2)
+            else playerTwoName
+
         checkWinner()
-    } //updateScreen()
+    } // updateScreen()
 
     private fun setupClickListeners() {
 
         // Score History Button
         binding.btHistory.setOnClickListener {
             val intent = Intent(this, ScoreHistoryActivity::class.java)
-            startActivity(intent)
+            intent.putExtra("winsPlayerOne", winsPlayerOne)
+            intent.putExtra("winsPlayerTwo", winsPlayerTwo)
+            getResults.launch(intent)
         }
 
         // Clean Points Button
@@ -79,16 +128,36 @@ class MainActivity : AppCompatActivity() {
             updateScreen()
         }
 
+        // EditPlayer1
+        binding.tvPlayerOne.setOnClickListener {
+            val intent = Intent(this, EditName::class.java)
+            intent.putExtra("playerOneName", playerOneName)
+            intent.putExtra("playerTwoName", playerTwoName)
+            getResults.launch(intent)
+        }
+
+        // EditPlayer2
+        binding.tvPlayerTwo.setOnClickListener {
+            val intent = Intent(this, EditName::class.java)
+            intent.putExtra("playerOneName", playerOneName)
+            intent.putExtra("playerTwoName", playerTwoName)
+            getResults.launch(intent)
+        }
+
         // EditPlayer2
         binding.ivEdit2.setOnClickListener {
             val intent = Intent(this, EditName::class.java)
-            startActivity(intent)
+            intent.putExtra("playerOneName", playerOneName)
+            intent.putExtra("playerTwoName", playerTwoName)
+            getResults.launch(intent)
         }
 
         // EditPlayer1
         binding.ivEdit1.setOnClickListener {
-            intent = Intent(this, EditName::class.java)
-            startActivity(intent)
+            val intent = Intent(this, EditName::class.java)
+            intent.putExtra("playerOneName", playerOneName)
+            intent.putExtra("playerTwoName", playerTwoName)
+            getResults.launch(intent)
         }
 
         // Player 1
@@ -148,8 +217,12 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
         outState.putInt("playerOne", playerOne)
         outState.putInt("playerTwo", playerTwo)
-    }
+        outState.putInt("winsPlayerOne", winsPlayerOne)
+        outState.putInt("winsPlayerTwo", winsPlayerTwo)
+        outState.putString("playerOneName", playerOneName)
+        outState.putString("playerTwoName", playerTwoName)
 
+    }
 
 } // MainActivity : AppCompatActivity()
 

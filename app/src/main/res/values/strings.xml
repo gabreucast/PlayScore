@@ -6,14 +6,15 @@
     <string name="player_1">Player 1</string>
     <string name="player_2">Player 2</string>
     <string name="edit_name">Edit name</string>
-    <string name="points">POINTS</string>
+    <string name="points_text">POINTS</string>
     <string name="_1">+1</string>
     <string name="_3">+3</string>
     <string name="_6">+6</string>
     <string name="_9">+9</string>
     <string name="_12">+12</string>
     <string name="points_clear">Reset Scores</string>
-    <string name="score_history">Score History</string>
+    <string name="scoring_history">Scoring History</string>
+    <string name="clear_score_history">Clear Score History</string>
 
     <!--MainActivity-->
     <string name="game_over">Game Over</string>
@@ -26,12 +27,10 @@
     <string name="enter_names">Enter the names of the players or teams to start keeping score.</string>
     <string name="player_1_configure">Player 1</string>
     <string name="player_2_configure">Player 2</string>
-    <string name="back">back</string>
-
+    <string name="back">Back</string>
 
     <!--activity_score_history-->
-    <string name="clear_scoring_history">Clear Scoring History</string>
-    <string name="wins">00 Wins</string>
     <string name="total_wins">Total Wins</string>
-
+    <string name="clear_scoring_history">Clear Scoring History</string>
+    <string name="history_wins">%1$d Wins</string>
 </resources>

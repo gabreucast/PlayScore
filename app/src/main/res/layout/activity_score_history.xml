@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:text="@string/name_app"
-            android:textColor="#745B00"
+            android:textColor="@color/app_text"
             android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/ivBack"
@@ -35,16 +35,17 @@
             app:layout_constraintTop_toTopOf="@id/ivBack" />
 
         <Button
+            android:id="@+id/btClearHistory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:backgroundTint="#936601"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/button_brown"
             android:text="@string/clear_scoring_history"
-            android:textColor="#FFCC00"
+            android:textColor="@color/gold_text"
             app:layout_constraintEnd_toEndOf="@+id/cvPlayers"
             app:layout_constraintStart_toStartOf="@+id/cvPlayers"
             app:layout_constraintTop_toBottomOf="@+id/cvPlayers"
-            app:strokeColor="#939095"
+            app:strokeColor="@color/button_stroke"
             app:strokeWidth="1dp" />
 
         <androidx.cardview.widget.CardView
@@ -52,7 +53,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="112dp"
-            android:backgroundTint="#F2F0F0"
+            android:backgroundTint="@color/card_tint"
             android:padding="16dp"
             app:cardCornerRadius="15dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -115,12 +116,12 @@
                             android:layout_marginEnd="12dp"
                             android:layout_weight="1"
                             android:gravity="end"
-                            android:text="@string/wins"
+                            android:text="@string/history_wins"
                             android:textSize="18sp"
                             android:textStyle="bold" />
+
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView"
@@ -152,7 +153,7 @@
                             android:layout_marginEnd="12dp"
                             android:layout_weight="1"
                             android:gravity="end"
-                            android:text="@string/wins"
+                            android:text="@string/history_wins"
                             android:textSize="18sp"
                             android:textStyle="bold" />
                     </LinearLayout>

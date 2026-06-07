@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:text="@string/name_app"
-            android:textColor="#745B00"
+            android:textColor="@color/app_text"
             android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/ivBack"
@@ -60,7 +60,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
-            android:backgroundTint="#F2F0F0"
+            android:backgroundTint="@color/card_tint"
             app:cardCornerRadius="15dp"
             app:layout_constraintEnd_toEndOf="@id/tvText"
             app:layout_constraintStart_toStartOf="@id/tvText"
@@ -77,10 +77,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/player_1_configure"
-                    app:boxStrokeColor="#936601"
+                    app:boxStrokeColor="@color/brown_text"
                     app:endIconDrawable="@drawable/ic_person"
                     app:endIconMode="custom"
-                    app:hintTextColor="#936601"
+                    app:hintTextColor="@color/brown_text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -88,7 +88,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/player_1_configure" />
+                        android:inputType="textCapWords"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -97,10 +97,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:hint="@string/player_2_configure"
-                    app:boxStrokeColor="#936601"
+                    app:boxStrokeColor="@color/brown_text"
                     app:endIconDrawable="@drawable/ic_person"
                     app:endIconMode="custom"
-                    app:hintTextColor="#936601"
+                    app:hintTextColor="@color/brown_text"
                     app:layout_constraintEnd_toEndOf="@id/tilPlayerOne"
                     app:layout_constraintStart_toStartOf="@id/tilPlayerOne"
                     app:layout_constraintTop_toBottomOf="@id/tilPlayerOne">
@@ -108,20 +108,21 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/player_2_configure" />
+                        android:inputType="textCapWords"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
+                    android:id="@+id/btStartGame"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginTop="16dp"
-                    android:backgroundTint="#936601"
+                    android:backgroundTint="@color/button_brown"
                     android:text="@string/confirm"
-                    android:textColor="#FFCC00"
+                    android:textColor="@color/gold_text"
                     app:layout_constraintEnd_toEndOf="@id/tilPlayerTwo"
                     app:layout_constraintStart_toStartOf="@id/tilPlayerTwo"
                     app:layout_constraintTop_toBottomOf="@id/tilPlayerTwo"
-                    app:strokeColor="#939095"
+                    app:strokeColor="@color/button_stroke"
                     app:strokeWidth="1dp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
