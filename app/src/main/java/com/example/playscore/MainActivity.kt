@@ -77,11 +77,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkWinner() {
+
+        val winnerPlayerOne =
+            if (playerOneName.isBlank()) getString(R.string.player_1)
+            else playerOneName
+
+        val winnerPlayerTwo =
+            if (playerTwoName.isBlank()) getString(R.string.player_2)
+            else playerTwoName
+
         if (playerOne >= 12) {
-            showWinner(getString(R.string.player_1))
+            showWinner(winnerPlayerOne)
             winsPlayerOne++
         } else if (playerTwo >= 12) {
-            showWinner(getString(R.string.player_2))
+            showWinner(winnerPlayerTwo)
             winsPlayerTwo++
         }
     }
