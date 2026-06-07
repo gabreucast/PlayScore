@@ -86,8 +86,14 @@ class ScoreHistoryActivity : AppCompatActivity() {
     private fun showWins() {
         binding.etVictoriesOne.text = winsPlayerOne.toString()
         binding.etVictoriesTwo.text = winsPlayerTwo.toString()
-        binding.etPlayerOne.text = playerOneName
-        binding.etPlayerTwo.text = playerTwoName
+
+        binding.etPlayerOne.text =
+            if (playerOneName.isBlank()) getString(R.string.player_1)
+            else playerOneName
+
+        binding.etPlayerTwo.text =
+            if (playerTwoName.isBlank()) getString(R.string.player_2)
+            else playerTwoName
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
