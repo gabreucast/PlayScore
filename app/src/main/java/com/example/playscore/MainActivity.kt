@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private var playerOneName = ""
     private var playerTwoName = ""
+    private var gameFinished = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,6 +79,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkWinner() {
 
+        if (gameFinished) return // Prevents multiple win registrations when both players reach the winning score at same time
+
         val winnerPlayerOne =
             if (playerOneName.isBlank()) getString(R.string.player_1)
             else playerOneName
@@ -87,9 +90,11 @@ class MainActivity : AppCompatActivity() {
             else playerTwoName
 
         if (playerOne >= 12) {
+            gameFinished = true
             showWinner(winnerPlayerOne)
             winsPlayerOne++
         } else if (playerTwo >= 12) {
+            gameFinished = true
             showWinner(winnerPlayerTwo)
             winsPlayerTwo++
         }
@@ -100,6 +105,7 @@ class MainActivity : AppCompatActivity() {
             .setTitle("🎉 ${getString(R.string.game_over)} 🎉")
             .setMessage("${getString(R.string.winner_message, winner)} \uD83E\uDD42")
             .setPositiveButton(getString(R.string.restart)) { _, _ ->
+                gameFinished = false
                 playerOne = 0
                 playerTwo = 0
                 updateScreen()
