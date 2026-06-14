@@ -116,7 +116,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginTop="16dp"
-                    android:backgroundTint="@color/button_brown"
+                    android:backgroundTint="@color/button_save_names"
                     android:text="@string/confirm"
                     android:textColor="@color/gold_text"
                     app:layout_constraintEnd_toEndOf="@id/tilPlayerTwo"

@@ -1,7 +1,7 @@
 <resources>
     <!--activity_main-->
-    <string name="app_name">PlayScore</string>
-    <string name="name_app">TRUCO UTFPR</string>
+    <string name="app_name">Play Score</string>
+    <string name="name_app">PlayScore</string>
     <string name="game_in_progress">Game in Progress</string>
     <string name="player_1">Player 1</string>
     <string name="player_2">Player 2</string>
